@@ -76,9 +76,46 @@
            top:1rem;
            transition: .3s ease-in-out;
         }
+        }
+
+input {
+  width: 100%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+input:focus::placeholder,
+input:not(:placeholder-shown)::placeholder {
+  color: transparent;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color:black;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 8px;
+  font-size: 12px;
+  color: #333;
+}
         .input-field label.active,
 .input-field input:focus + label,
-.input-field input:hover + label{
+.input-field input:hover + label,
+input:focus + label,
+input:not(:placeholder-shown) + label {
             top: 2px;
             font-size: 12px;
             color: grey;
