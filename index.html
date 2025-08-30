@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login | shopify</title>
+        <link rel="stylesheet" href="log.css">
+        <link rel="icon" href="._shopify_logo_darkbg.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+        <body>
+        <div class="container">
+            <div class="box">
+                <div class="login-box" id="login">
+                    <div class="top-header">
+                        <h3>Sign-in</h3>
+                        <P>welcome back to the mart, just sign back in so we can recover your info</P>                    
+                    </div>
+                    <div class="input-box">
+                        <div class="input-field">
+                            <input type="email" placeholder="youname@example.com" class="box-input" id="logemail" required>
+                            <label for="logemail">Email Address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" placeholder="Enter your password" class="box-input" id="logpassword" required>
+                            <label for="logpassword">Password</label>
+                        </div>
+                        <div class="remember">
+                            <input type="checkbox" class="check" id="formcheck">
+                            <label for="formcheck">Don't forget me</label>
+                        </div> 
+                        <div class="input-field">
+                            <input type="submit" class="box-submit" value="Sign-in">
+                        </div>   
+                        <div class="forgot">
+                            <a href="support.html">Forgot Password?</a>
+                        </div>
+                    </div>        
+                </div>
+                 <div class="register-box" id="register">
+                    <div class="top-header">
+                        <h3>Sign-up Now</h3>
+                        <P>welcome to shopify, pls sign-up to get our exclusive goods and services </P>                    
+                    </div>
+                    <div class="input-box">
+                        <div class="input-field">
+                            <input type="text" placeholder="Your username" class="box-input" id="regname" required>
+                            <label for="regname">username</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" placeholder="youname@example.com" class="box-input" id="regemail" required>
+                            <label for="regemail">Email Address</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" placeholder="Enter your password" class="box-input" id="regpassword" required>
+                            <label for="regpassword">Password</label>
+                        </div>
+                        <div class="remember">
+                            <input type="checkbox" class="check" id="formcheck">
+                            <label for="formcheck">remember me</label>
+                        </div> 
+                        <div class="input-field">
+                            <input type="submit" class="box-submit" value="Register">
+                        </div>   
+                    </div>        
+                </div>
+                <div class="switch">
+                    <a href="#" class="login" onclick="login()">login</a>
+                    <a href="#" class="register" onclick="register()">register</a>
+                    <div class="btn-active" id="btn"></div>
+                </div>
+            </div>
+        </div>
+        <div class="icons">
+            <img width="48" height="48" src="https://img.icons8.com/color/48/google-logo.png" alt="google-logo"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/facebook-new.png" alt="facebook-new"/>
+            <img width="50" height="50" src="https://img.icons8.com/ios-filled/100/mac-os.png" alt="mac-os"/>
+        </div>
+        <script>
+    var x = document.getElementById ('login');
+    var y = document.getElementById ('register');
+    var z = document.getElementById ('btn');
+    
+    function login(){
+        x.style.left='27px';
+        y.style.left='350px';
+        z.style.left='0px';
+    }
+     function register(){
+        x.style.left='-350px';
+        y.style.left='25px';
+        z.style.left='150px';
+    }
+</script>
+<script>
+document.querySelectorAll('.input-field input').forEach(function(input) {
+    const label = input.parentElement.querySelector('label');
+    const originalPlaceholder = input.getAttribute('placeholder');
+
+    // Show placeholder on hover
+    input.addEventListener('mouseenter', function() {
+        if (originalPlaceholder) input.setAttribute('placeholder', originalPlaceholder);
+    });
+    // Hide placeholder when not hovered
+    input.addEventListener('mouseleave', function() {
+        input.setAttribute('placeholder', '');
+    });
+
+    // Hide placeholder on page load
+    input.setAttribute('placeholder', '');
+
+    // Label animation logic
+    input.addEventListener('input', function() {
+        if (input.value.trim() !== '') {
+            label.classList.add('active');
+        } else {
+            label.classList.remove('active');
+        }
+    });
+    // On page load, check if input has value (for autofill)
+    if (input.value.trim() !== '') {
+        label.classList.add('active');
+    }
+});
+</script>
+    </body>
+</html>
